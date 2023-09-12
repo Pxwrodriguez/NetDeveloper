@@ -19,6 +19,10 @@ namespace DataAccess.Repositories
             return chinookcontext.Album.FirstOrDefault(album => album.Title == title);
         }
 
+        public int Count()
+        {
+            return chinookcontext.Album.Count();
+        }
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }
