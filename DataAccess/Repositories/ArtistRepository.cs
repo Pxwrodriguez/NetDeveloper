@@ -13,6 +13,14 @@ namespace DataAccess.Repositories
         { 
         }
 
+        public IEnumerable<Artist> GetArtistsPage(int pageindex, int pagesize)
+        {
+            var query = chinookcontext.Artist
+                 .OrderBy(a => a.Artistid)
+                 .Skip((pageindex - 1) * pagesize)
+                 .Take(pagesize);
+            return query.ToList();
+        }
         public IEnumerable<Artist> GetArtistsByStore()
         {
             return chinookcontext.Database.SqlQuery<Artist>("GetListaArtista");
@@ -27,6 +35,8 @@ namespace DataAccess.Repositories
         {
             return chinookcontext.Artist.Count();
         }
+
+     
 
         public ChinookContext chinookcontext
         {

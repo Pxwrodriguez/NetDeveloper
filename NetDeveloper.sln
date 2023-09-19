@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E6F05AC5-4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService", "InvoiceService\InvoiceService.csproj", "{65907577-EF04-4C32-AE2E-617977F10B91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebForms.Test", "WebForms.Test\WebForms.Test.csproj", "{09CA3D4F-219D-4E8D-94B2-B9204DDDCC93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{65907577-EF04-4C32-AE2E-617977F10B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65907577-EF04-4C32-AE2E-617977F10B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65907577-EF04-4C32-AE2E-617977F10B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09CA3D4F-219D-4E8D-94B2-B9204DDDCC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CA3D4F-219D-4E8D-94B2-B9204DDDCC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CA3D4F-219D-4E8D-94B2-B9204DDDCC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CA3D4F-219D-4E8D-94B2-B9204DDDCC93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
