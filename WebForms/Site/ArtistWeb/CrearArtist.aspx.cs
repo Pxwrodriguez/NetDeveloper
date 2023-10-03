@@ -1,34 +1,39 @@
 ﻿using DataAccess;
+using log4net;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.Services;
+using WebForms.App_Code;
 
 namespace WebForms.Site.ArtistWeb
 {
-    public partial class CrearArtist : System.Web.UI.Page
+    public partial class CrearArtist : BasePage
     {
-        private UnitOfWork _unit;
-        public CrearArtist()
-        {
-            _unit = new UnitOfWork(new ChinookContext());
-        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btncrear_Click(object sender, EventArgs e)
-        {
-            var artista = new Artist { Name = txtname.Text };
-            _unit.Artists.Add(artista);
-            if (_unit.Complete()>0)
+            if (!IsPostBack)
             {
-                Response.Redirect("ListaArtist.aspx");
-            }
+                //VerifyUser();
+                //IsUserInRole("ADMIN");
+               
+            }          
         }
+       
+        [WebMethod]
+        public static bool InsertArtist(string name)
+        {
+          
+                var artist = new Artist { Name = name };
+                using (var unit = new UnitOfWork(new ChinookContext()))
+                {
+                    unit.Artists.Add(artist);
+                    return unit.Complete() > 0;
+                }
+            
+        }
+
+
+
     }
 }

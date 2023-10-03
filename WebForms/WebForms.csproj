@@ -223,6 +223,7 @@
     <Content Include="Site.Master" />
     <Content Include="Site\ArtistWeb\CrearArtist.aspx" />
     <Content Include="Site\ArtistWeb\ListaArtist.aspx" />
+    <Content Include="Site\ArtistWeb\ReporteArtist.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -335,7 +336,6 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\ApplicationRoles.cs" />
     <Compile Include="App_Code\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -410,6 +410,13 @@
     </Compile>
     <Compile Include="Site\ArtistWeb\ListaArtist.aspx.designer.cs">
       <DependentUpon>ListaArtist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\ReporteArtist.aspx.cs">
+      <DependentUpon>ReporteArtist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\ArtistWeb\ReporteArtist.aspx.designer.cs">
+      <DependentUpon>ReporteArtist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\MantTemplate.master.cs">
       <DependentUpon>MantTemplate.master</DependentUpon>

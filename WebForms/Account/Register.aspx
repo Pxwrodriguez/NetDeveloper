@@ -36,6 +36,14 @@
                     CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
             </div>
         </div>
+
+        <div class="form-grup">
+            <asp:Label class="control-label col-md-2" ID="Label1" runat="server" for="UserRole">Rol</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="UserRole" CssClass="form-control"></asp:TextBox>
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />

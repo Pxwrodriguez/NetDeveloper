@@ -28,9 +28,9 @@ namespace WebForms.Site.ArtistWeb
             //ArtistGridView.DataBind();
             if (!IsPostBack)
             {
-                VerifyUser();
-                IsUserInRole("ADMIN");
-                cargar_datos(1);
+                //VerifyUser();
+                //IsUserInRole("ADMIN");
+              cargar_datos(1);
             }
         }
 

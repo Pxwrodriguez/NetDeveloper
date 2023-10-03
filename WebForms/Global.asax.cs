@@ -15,25 +15,43 @@ namespace WebForms
     {
         private ILog _logger;
 
+        public Global()
+        {
+            log4net.Config.XmlConfigurator.Configure();
+            _logger = LogManager.GetLogger(typeof(Global));
+        }
+
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            log4net.Config.XmlConfigurator.Configure();
-            _logger = LogManager.GetLogger(typeof(Global));
+            BundleConfig.RegisterBundles(BundleTable.Bundles);          
             _logger.Debug("Logging is enabled");
-
+            Application["Users"] = 0;
         }
         protected void Application_Error(object sender, EventArgs e)
         {
             Exception ex = Server.GetLastError();
             if (ex is ThreadAbortException)
-                return;
-            _logger = LogManager.GetLogger(typeof(Global));
+                return;            
             _logger.Error(ex);
             Response.Redirect("~/Error.aspx");
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            Application["Users"] = (int)Application["Users"] + 1;
+            NumberUsers();
+        }
+
+        protected void Session_End(object sender, EventArgs e)
+        {
+            Application["Users"] = (int)Application["Users"] - 1;
+            NumberUsers();
+        }
+        private void NumberUsers()
+        {
+            _logger.Info($"Numero de usuarios {Application["Users"]}");
         }
     }
 }
