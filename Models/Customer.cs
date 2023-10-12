@@ -8,5 +8,7 @@ namespace Models
 {
     public class Customer
     {
+        public string Cliente { get; set; }
+        public string Ciudad { get; set; }
     }
 }

@@ -18,11 +18,13 @@ namespace DataAccess
             Artists = new ArtistRepository(_context);
             Albums = new AlbumRepository(_context);
             Customers = new CustomerRepository(_context);
+            Usuarios = new UsuarioRepository(_context);
         }
 
         public IArtistRepository Artists { get; private set; }
         public IAlbumRepository Albums { get; private set; }
         public ICustomerRepository Customers { get; private set; }
+        public IUsuarioRepository Usuarios { get; private set; }
 
         public int Complete()
         {

@@ -10,5 +10,7 @@ namespace DataAccess.Repositories
     public interface ICustomerRepository :IRepository<Customer>
     {
         IEnumerable<CustomerInvoice> Customerinvoice(int invoiceid, string customerEmail);
+
+        IEnumerable<Customer> GetListaCustomer(string Country);
     }
 }

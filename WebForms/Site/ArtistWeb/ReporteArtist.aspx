@@ -33,9 +33,13 @@
                     var artistTableBody = $('#artistTableBody');
                     artistTableBody.empty();
 
-                    if (data.d.length > 0) {
-                        $.each(data.d, function (index, artist) {
-                            artistTableBody.append('<tr><td>' + artist.Artistid + '</td><td>' + artist.Name + '</td></tr>');
+                    var currentUserName = data.CurrentUserName;
+                    var artistas = data.Artists;
+
+                    if (artistas.length > 0) {
+                      
+                        $.each(artistas, function (index, artist) {
+                            artistTableBody.append('<tr><td>' + artist.Artistid + '</td><td>' + currentUserName + '</td></tr>');
                         });
 
                         showMensaje("Datos cargados");

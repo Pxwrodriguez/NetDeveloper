@@ -22,6 +22,12 @@ namespace DataAccess.Repositories
             return chinookcontext.Database.SqlQuery<CustomerInvoice>("dbo.CustomerInvoice @invoiceid,@email", invoiceid, email);
         }
 
+        public IEnumerable<Customer> GetListaCustomer(string Country)
+        {
+            var invoiceid = new SqlParameter("@Country", Country);
+            return chinookcontext.Database.SqlQuery<Customer>("dbo.GetListaCustomer @Country", Country);
+        }
+
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }

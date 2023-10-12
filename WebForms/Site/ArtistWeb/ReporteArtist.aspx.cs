@@ -17,15 +17,27 @@ namespace WebForms.Site.ArtistWeb
 
         }
 
+        public class ArtistResult
+        {
+            public List<Artist> Artists { get; set; }
+            public string CurrentUserName { get; set; }
+        }
+
         [WebMethod]
-        public static List<Artist> ListaArtist()
+        public static ArtistResult ListaArtist()
         {
             using (var unit = new UnitOfWork(new ChinookContext()))
             {
-                //IEnumerable<Artist> artistas = unit.Artists.GetArtistsByStore();
+                var currentUserName = HttpContext.Current.User.Identity.Name;
                 IEnumerable<Artist> artistas = unit.Artists.GetArtistsByStore();
                 List<Artist> listaartistas = artistas.ToList();
-                return listaartistas;
+                var result = new ArtistResult
+                {
+                    Artists = listaartistas,
+                    CurrentUserName = currentUserName
+                };
+
+                return result;
             }
 
         }

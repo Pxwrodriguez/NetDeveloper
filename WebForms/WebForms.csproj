@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DataAccess\bin\Debug\DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -191,6 +195,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="image1.png" />
+    <Content Include="image2.png" />
     <Content Include="PruebaError.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,6 +230,9 @@
     <Content Include="Site\ArtistWeb\CrearArtist.aspx" />
     <Content Include="Site\ArtistWeb\ListaArtist.aspx" />
     <Content Include="Site\ArtistWeb\ReporteArtist.aspx" />
+    <Content Include="Site\Usuarios\ListaUsauriosAjax.aspx" />
+    <Content Include="Site\Usuarios\Listausuarios.aspx" />
+    <Content Include="Site\Ventas\Ventas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -425,6 +434,27 @@
     <Compile Include="Site\MantTemplate.master.designer.cs">
       <DependentUpon>MantTemplate.master</DependentUpon>
     </Compile>
+    <Compile Include="Site\Usuarios\ListaUsauriosAjax.aspx.cs">
+      <DependentUpon>ListaUsauriosAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Usuarios\ListaUsauriosAjax.aspx.designer.cs">
+      <DependentUpon>ListaUsauriosAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Usuarios\Listausuarios.aspx.cs">
+      <DependentUpon>Listausuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Usuarios\Listausuarios.aspx.designer.cs">
+      <DependentUpon>Listausuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Ventas\Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Ventas\Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -449,10 +479,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{373a05f6-8a55-4761-8026-f7d275d97a68}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{12c441fb-d135-4848-8100-534ad69918b1}</Project>
       <Name>Models</Name>
