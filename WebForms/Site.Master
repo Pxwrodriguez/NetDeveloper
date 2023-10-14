@@ -45,21 +45,42 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Chinook</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Site/ArtistWeb/ListaArtist">Artistas</a></li>
-                        <li><a runat="server" href="~/Site/Usuarios/Listausuarios">Usuarios</a></li>
-                        <li><a runat="server" href="~/Site/ArtistWeb/ReporteArtist">Reporte</a></li>
-                        <li><a runat="server" href="~/Site/Ventas/Ventas">Ventas</a></li>
+                        <li><a runat="server" href="~/">Inicio</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artistas<b class="caret"></b> </a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Site/ArtistWeb/ListaArtist">Ver artistas</a></li>
+                                <li><a runat="server" href="~/Site/ArtistWeb/ReporteArtist">Reporte</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Album<b class="caret"></b> </a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Site/Albums/BusquedaAlbum">Buscar</a></li>
+                                <li><a runat="server" href="~/Site/Albums/VotacionAlbum">Votacion</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ventas<b class="caret"></b> </a>
+                            <ul class="dropdown-menu">
+                                <li><a runat="server" href="~/Site/Ventas/Ventas">Clientes por pais</a></li>                                
+                            </ul>
+                        </li>
+                     
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Site/Usuarios/ListaUsauriosAjax">Usuarios</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

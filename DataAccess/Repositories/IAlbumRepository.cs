@@ -10,6 +10,9 @@ namespace DataAccess.Repositories
     public interface IAlbumRepository : IRepository<Album>
     {
         Album GetByTitle(string title);
+        List<Album> GetAlbumsLikeTitle(string searchTitle);
+
+        List<string> GetTitlesLikeTitle(string searchTitle);
         int Count();
     }
 }

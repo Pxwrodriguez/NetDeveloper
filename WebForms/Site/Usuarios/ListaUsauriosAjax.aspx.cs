@@ -27,11 +27,26 @@ namespace WebForms.Site.Usuarios
         [WebMethod]
         public static IEnumerable<Usuario> ListaUsuarios()
         {
+            string usuarioactual = HttpContext.Current.User.Identity.Name;
             using (var unit = new UnitOfWork(new ChinookContext()))
             {
                 IEnumerable<Usuario> usuarios = unit.Usuarios.GetUsuarios();
                 List<Usuario> listausuarios = usuarios.ToList();
+
+                foreach (var usuario in listausuarios)
+                {
+                    if (usuario.usuario==usuarioactual)
+                    {
+                        usuario.usuarioactual = "Si";
+                    }
+                    else
+                    {
+                        usuario.usuarioactual = "No";
+                    }
+                }
+
                 return listausuarios;
+                 
             }
 
         }

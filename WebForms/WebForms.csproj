@@ -197,6 +197,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="image1.png" />
     <Content Include="image2.png" />
+    <Content Include="Images\image2.png" />
     <Content Include="PruebaError.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -227,6 +228,8 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Site\Albums\BusquedaAlbum.aspx" />
+    <Content Include="Site\Albums\VotacionAlbum.aspx" />
     <Content Include="Site\ArtistWeb\CrearArtist.aspx" />
     <Content Include="Site\ArtistWeb\ListaArtist.aspx" />
     <Content Include="Site\ArtistWeb\ReporteArtist.aspx" />
@@ -405,6 +408,20 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Albums\BusquedaAlbum.aspx.cs">
+      <DependentUpon>BusquedaAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Albums\BusquedaAlbum.aspx.designer.cs">
+      <DependentUpon>BusquedaAlbum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Albums\VotacionAlbum.aspx.cs">
+      <DependentUpon>VotacionAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Albums\VotacionAlbum.aspx.designer.cs">
+      <DependentUpon>VotacionAlbum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\ArtistWeb\CrearArtist.aspx.cs">
       <DependentUpon>CrearArtist.aspx</DependentUpon>
