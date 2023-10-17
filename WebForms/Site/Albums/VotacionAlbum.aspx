@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/MantTemplate.master" AutoEventWireup="true" CodeBehind="VotacionAlbum.aspx.cs" Inherits="WebForms.Site.Albums.VotacionAlbum" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ButtonContent" runat="server">
      <p>For Those About To Rock We Salute You</p>
+     <select id="ddalbunes"></select>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ArtistContent" runat="server">
     <div>
@@ -15,6 +16,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            cargar()
             $("#btnUpVote").click(function () {
                 event.preventDefault();
                 votar(1);
@@ -24,12 +26,14 @@
                 votar(-1)
             });
         });
+      
 
         function votar(value) {
+            var idseeleccionado = $("#ddalbumes").val();
             $.ajax({
                 type: "POST",
                 url: "VotacionAlbum.aspx/ActualizarVoto",
-                data: JSON.stringify({ value: value }),
+                data: JSON.stringify({ idseeleccionado:idalbum, value: value }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
