@@ -39,6 +39,20 @@ namespace DataAccess.Repositories
             return albums;
         }
 
+        public Album GetAlbumWithTracks(int albumid)
+        {
+            return chinookcontext.Album
+                .Include(a => a.Tracks)
+                .SingleOrDefault(a => a.Albumid == albumid);
+        }
+
+        public Album GetAlbumWithTracks(string title)
+        {
+            return chinookcontext.Album
+               .Include(a => a.Tracks)
+               .SingleOrDefault(a => a.Title == title);
+        }
+
         public ChinookContext chinookcontext
         {
             get { return Context as ChinookContext; }

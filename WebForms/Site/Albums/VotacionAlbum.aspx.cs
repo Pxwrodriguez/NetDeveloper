@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -25,16 +26,27 @@ namespace WebForms.Site.Albums
         }
 
         [WebMethod]
-        public static bool ActualizarVoto(int value)
+        public static IEnumerable<Album> ObtenerAlbunes()
         {
-            int valoractual = GetValoracionAlbum();
+            using (var unit = new UnitOfWork(new ChinookContext()))
+            {
+                IEnumerable<Album> albuns = unit.Albums.GetAll();
+                List<Album> listalbum = albuns.ToList();
+                return listalbum;
+            }
+        }
+
+        [WebMethod]
+        public static bool ActualizarVoto(int idalbum ,int value)
+        {
+            int valoractual = GetValoracionAlbum(idalbum);
             int nuevovalor = valoractual + value;
-            bool updated = SetValoracionAlbum(nuevovalor);
+            bool updated = SetValoracionAlbum(idalbum,nuevovalor);
             
             return updated;
         }
 
-        private static int GetValoracionAlbum()
+        private static int GetValoracionAlbum(int idalbum)
         {
             string cadenacnx = "Data Source=.;Initial Catalog=Chinook;Integrated Security=True";
             int valor =0;
@@ -55,7 +67,7 @@ namespace WebForms.Site.Albums
             return valor;
         }
 
-        private static bool SetValoracionAlbum(int nuevovalor)
+        private static bool SetValoracionAlbum(int idalbum,int nuevovalor)
         {
             string cadenacnx = "Data Source=.;Initial Catalog=Chinook;Integrated Security=True";
             using (SqlConnection conexion = new SqlConnection(cadenacnx))

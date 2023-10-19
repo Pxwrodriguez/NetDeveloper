@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/MantTemplate.master" AutoEventWireup="true" CodeBehind="VotacionAlbum.aspx.cs" Inherits="WebForms.Site.Albums.VotacionAlbum" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ButtonContent" runat="server">
      <p>For Those About To Rock We Salute You</p>
-     <select id="ddalbunes"></select>
+     <select id="ddlAlbunes"></select>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ArtistContent" runat="server">
     <div>
@@ -16,7 +16,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            cargar()
+            cargaralbunes()
             $("#btnUpVote").click(function () {
                 event.preventDefault();
                 votar(1);
@@ -27,13 +27,37 @@
             });
         });
       
+        function cargaralbunes() {
+            $.ajax({               
+                type: "POST",
+                url: "VotacionAlbum.aspx/ObtenerAlbunes",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var ddlCategories = document.getElementById("ddlAlbunes");
+                    
+                    ddlCategories.innerHTML = "";
+
+
+                    for (var i = 0; i < response.d.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = response.d[i].Title;  
+                        option.value = response.d[i].Albumid;  
+                        ddlCategories.add(option);
+                    }
+                },
+                error: function (error) {
+                    console.log("Error: " + error.responseText);
+                }
+            });
+        }
 
         function votar(value) {
-            var idseeleccionado = $("#ddalbumes").val();
+            var idalbum = $("#ddlAlbunes").val();
             $.ajax({
                 type: "POST",
                 url: "VotacionAlbum.aspx/ActualizarVoto",
-                data: JSON.stringify({ idseeleccionado:idalbum, value: value }),
+                data: JSON.stringify({ idalbum:idalbum, value: value }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {

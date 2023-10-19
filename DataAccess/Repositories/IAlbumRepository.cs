@@ -13,6 +13,11 @@ namespace DataAccess.Repositories
         List<Album> GetAlbumsLikeTitle(string searchTitle);
 
         List<string> GetTitlesLikeTitle(string searchTitle);
+
+        Album GetAlbumWithTracks(int albumid);
+
+        Album GetAlbumWithTracks(string title);
+
         int Count();
     }
 }
