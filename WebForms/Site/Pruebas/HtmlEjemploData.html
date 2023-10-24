@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="miboton" data-info="dato personalizado"  class="alert-danger" >Es un boton</button>
+    <br />
+    <label id="milabel" data-codigo="00001" >Etiqueta</label>
+   
+    <script type="text/javascript">
+        var label = document.getElementById("milabel");
+
+        label.addEventListener("click", function () {
+            var info = label.dataset.codigo;
+            console.log("info : " + info);
+        });        
+    </script>
+    
+    <!--<script>
+        var boton = document.getElementById("miboton");
+        var info = boton.getAttribute("data-info");
+        alert("info de atributo" + info);
+    </script>-->
+
+</body>
+</html>

@@ -12,7 +12,9 @@ namespace DataAccess
         IArtistRepository Artists { get; }
         IAlbumRepository  Albums { get; }
         ICustomerRepository Customers { get; }
-        IUsuarioRepository Usuarios { get; }
+        IUsuarioRepository Usuarios { get; }        
+        ITrackRepository Tracks { get; }
+
         int Complete();
     }
 

@@ -232,8 +232,14 @@
     <Content Include="Site\ArtistWeb\CrearArtist.aspx" />
     <Content Include="Site\ArtistWeb\ListaArtist.aspx" />
     <Content Include="Site\ArtistWeb\ReporteArtist.aspx" />
+    <Content Include="Site\Pruebas\Archivo.aspx" />
+    <Content Include="Site\Pruebas\FormEnviar.aspx" />
+    <Content Include="Site\Pruebas\FormRecibir.aspx" />
+    <Content Include="Site\Pruebas\HtmlEjemploData.html" />
     <Content Include="Site\Usuarios\ListaUsauriosAjax.aspx" />
     <Content Include="Site\Usuarios\Listausuarios.aspx" />
+    <Content Include="Site\Ventas\AgregarInvoiceLine.aspx" />
+    <Content Include="Site\Ventas\CrearInvoice.aspx" />
     <Content Include="Site\Ventas\Ventas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -457,6 +463,27 @@
     <Compile Include="Site\MantTemplate.master.designer.cs">
       <DependentUpon>MantTemplate.master</DependentUpon>
     </Compile>
+    <Compile Include="Site\Pruebas\Archivo.aspx.cs">
+      <DependentUpon>Archivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Pruebas\Archivo.aspx.designer.cs">
+      <DependentUpon>Archivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Pruebas\FormEnviar.aspx.cs">
+      <DependentUpon>FormEnviar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Pruebas\FormEnviar.aspx.designer.cs">
+      <DependentUpon>FormEnviar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Pruebas\FormRecibir.aspx.cs">
+      <DependentUpon>FormRecibir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Pruebas\FormRecibir.aspx.designer.cs">
+      <DependentUpon>FormRecibir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site\Usuarios\ListaUsauriosAjax.aspx.cs">
       <DependentUpon>ListaUsauriosAjax.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -470,6 +497,20 @@
     </Compile>
     <Compile Include="Site\Usuarios\Listausuarios.aspx.designer.cs">
       <DependentUpon>Listausuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Ventas\AgregarInvoiceLine.aspx.cs">
+      <DependentUpon>AgregarInvoiceLine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Ventas\AgregarInvoiceLine.aspx.designer.cs">
+      <DependentUpon>AgregarInvoiceLine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Ventas\CrearInvoice.aspx.cs">
+      <DependentUpon>CrearInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Ventas\CrearInvoice.aspx.designer.cs">
+      <DependentUpon>CrearInvoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site\Ventas\Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
