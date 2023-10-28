@@ -64,8 +64,10 @@
     <Compile Include="Repositories\IAlbumRepository.cs" />
     <Compile Include="Repositories\IArtistRepository.cs" />
     <Compile Include="Repositories\ICustomerRepository.cs" />
-    <Compile Include="Repositories\IInvoiceLine.cs" />
+    <Compile Include="Repositories\IInvoiceRepository.cs" />
+    <Compile Include="Repositories\IInvoiceLineRepository.cs" />
     <Compile Include="Repositories\InvoiceLineRepository.cs" />
+    <Compile Include="Repositories\InvoiceRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\ITrackRepository.cs" />
     <Compile Include="Repositories\IUsuarioRepository.cs" />

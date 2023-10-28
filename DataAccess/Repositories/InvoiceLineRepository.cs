@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public class InvoiceLineRepository : Repository<InvoiceLine>, IInvoiceLine
+    public class InvoiceLineRepository : Repository<InvoiceLine>, IInvoiceLineRepository
     {
         public InvoiceLineRepository(DbContext context) : base(context)
         {
         }
 
-        bool IInvoiceLine.ExistInLine(int InvoiceId)
+        bool IInvoiceLineRepository.ExistInLine(int InvoiceId)
         {
             throw new NotImplementedException();
         }

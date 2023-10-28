@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    public interface IInvoiceLine : IRepository<InvoiceLine>
+    public interface IInvoiceLineRepository : IRepository<InvoiceLine>
     {
         bool ExistInLine(int InvoiceId);
 

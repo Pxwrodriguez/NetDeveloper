@@ -1,6 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site/MantTemplate.master" AutoEventWireup="true" CodeBehind="CrearInvoice.aspx.cs" Inherits="WebForms.Site.Ventas.CrearInvoice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ButtonContent" runat="server">
+    <div id="modalSuccess" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Éxito</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Los datos se guardaron con éxito.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ArtistContent" runat="server">
     <div class="container">
@@ -15,7 +30,7 @@
             <div class="col-md-6">
                 <asp:GridView ID="GridDetalle"
                     runat="server"
-                    AutoGenerateColumns="false">
+                    AutoGenerateColumns="true">
                 </asp:GridView>
             </div>
             <div class="col-md-6">
@@ -27,5 +42,5 @@
         <asp:Label ID="Label3" runat="server" Text="Total:"></asp:Label><asp:TextBox ID="TxtTotal" runat="server"></asp:TextBox>
     </div>
     <p></p>
-    <asp:Button ID="BtnGrabar" runat="server" Text="Guardar Factura" />
+    <asp:Button ID="BtnGrabar" runat="server" onclick="BtnGrabar_Click" Text="Guardar Factura"/>
 </asp:Content>

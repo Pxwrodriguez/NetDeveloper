@@ -512,6 +512,7 @@
     <Compile Include="Site\Ventas\CrearInvoice.aspx.designer.cs">
       <DependentUpon>CrearInvoice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site\Ventas\FilaDatos.cs" />
     <Compile Include="Site\Ventas\Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

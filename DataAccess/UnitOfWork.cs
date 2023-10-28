@@ -20,6 +20,10 @@ namespace DataAccess
             Customers = new CustomerRepository(_context);
             Usuarios = new UsuarioRepository(_context);
             Tracks = new TrackRepository(_context);
+            InvoiceLines = new InvoiceLineRepository(_context);
+            Invoices = new InvoiceRepository(_context);
+
+
         }
 
         public IArtistRepository Artists { get; private set; }
@@ -27,6 +31,8 @@ namespace DataAccess
         public ICustomerRepository Customers { get; private set; }
         public IUsuarioRepository Usuarios { get; private set; }
         public ITrackRepository Tracks { get; private set; }
+        public IInvoiceLineRepository InvoiceLines { get; private set; }
+        public IInvoiceRepository Invoices { get; private set; }
 
         public int Complete()
         {

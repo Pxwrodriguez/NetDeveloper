@@ -23,10 +23,13 @@ namespace DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
         }
 
         public virtual DbSet<Artist> Artist { get; set; }
         public virtual DbSet<Album> Album { get; set; }
         public virtual DbSet<Track> Track { get; set; }
+        public virtual DbSet<InvoiceLine> InvoiceLines { get; set; }
+        public virtual DbSet<Invoice> Invoices { get; set; }
     }
 }

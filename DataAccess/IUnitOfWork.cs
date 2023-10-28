@@ -14,7 +14,8 @@ namespace DataAccess
         ICustomerRepository Customers { get; }
         IUsuarioRepository Usuarios { get; }        
         ITrackRepository Tracks { get; }
-
+        IInvoiceLineRepository InvoiceLines { get; }
+        IInvoiceRepository Invoices { get; }
         int Complete();
     }
 
